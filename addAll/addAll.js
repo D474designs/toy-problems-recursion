@@ -7,13 +7,13 @@ var add = function(array) {
     return 0;
   }
   // add i to parameters as starting value
-  function sum(array, i){
+  function sum(array, i) {
     // if array has only one value return value
-    if (i === array.length-1) {
+    if (i === array.length - 1) {
       return array[i];
     }
     // recursively call sum function
-      return array[i] + sum(array, i+1);
+      return array[i] + sum(array, i + 1);
     }
     // return reduced array
       return sum(array, 0);

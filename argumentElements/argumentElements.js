@@ -2,18 +2,36 @@
 // itself.
 // augmentElements([[],[3],[7]], 5); // [[5],[3,5],[7,5]]
 
-var augmentElements = function(array, aug, i) {
-  if (i < array.length) {
-    array[i].push(aug);
+// var augmentElements = function(array, aug, i) {
+//   if (i < array.length) {
+//     array[i].push(aug);
+//     // i++;
+//     augmentElements(array, aug, i + 1);
+//   }
+//   // else if (i === array.length) {
+//   //   return array;
+//   // }
+//   return array;
+//   // console.log(array);
+// };
 
-    augmentElements(array, aug, i + 1);
+var augmentElements = function(array, aug) {
+  if (array.length !== 0) {
+    array[0].push(aug);
+    augmentElements(array.slice(1), aug);
   }
-  // else if (i === array.length) {
-  //   return array;
-  // }
   return array;
-  // console.log(array);
 };
+
+// var augmentElements = function(array, aug) {
+//   var i = 0;
+//   if (i < array.length) {
+//     array[i].push(aug);
+//     i++;
+//     augmentElements(array, aug);
+//   }
+//   return array;
+// };
 
 //   var i = 0;
 //   var newArray = [];
