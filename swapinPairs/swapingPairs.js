@@ -5,18 +5,18 @@ var swapElements = function(array) {
   //START SOLUTUION//
   var i = 0;
   var j = 1;
-  var swappo = function(array) {
-    if (array.length > 1) {
-      var shift = array.splice(i);
-      array.splice(j, 0, shift)
+  function swappo(array) {
+    if ((array.length % 2 === 1) && (i === array.length - 1)) {
+      var shift = array.splice(i, 1);
+      array.splice(j, 0, shift);
       i += 2;
       j += 2;
-      swappo(array);
+      return swappo(array);
     } else {
     return array;
-  }
-  swappo(array);
+      }
   //END SOLUTUION//
+  }
+  return swappo(array);
 };
-
 swapElements([3,6,8,1,5]);
